@@ -9,9 +9,42 @@ Kanban SaaS para constructoras pequeñas y startups de Argentina.
 Constructly es una aplicación web desarrollada en **Laravel** que ayuda a empresas de la construcción a organizar obras, coordinar equipos y optimizar materiales.  
 Pensada para constructoras de **10 a 30 personas**, ofrece tableros Kanban, control de inventario básico y facturación integrada con **Mercado Pago**, todo desde una interfaz **mobile-friendly** ideal para supervisores en obra.
 
+## How to start
+
+1. Clona el repositorio.
+2. Instala las dependencias: `composer install`.
+3. Instala los paquetes NPM: `npm install`.
+4. Builda los assets: `npm run build` o `npm run dev` en caso de estar en desarrollo.
+5. Crea la base de datos: `php artisan migrate`.
+6. Crea el usuario administrador: `php artisan db:seed`
+7. Inicia la app: `php artisan serve`
+
+```bash
+cd your_folder
+
+#https
+git clone https://github.com/TomasSorgetti/parcial-laravel.git
+#ssh
+git clone git@github.com:TomasSorgetti/parcial-laravel.git
+
+cd parcial-laravel
+
+composer install
+
+npm install
+
+npm run build || npm run dev
+
+php artisan migrate
+
+php artisan db:seed
+
+php artisan serve
+```
+
 ---
 
-## 🚀 Características principales
+## Características principales
 
 -   Tableros Kanban con columnas predefinidas y drag-and-drop.
 -   Gestión de tareas con responsable, fecha límite y notas.
@@ -24,7 +57,7 @@ Pensada para constructoras de **10 a 30 personas**, ofrece tableros Kanban, cont
 
 ---
 
-## 🎯 Diferenciadores
+## Diferenciadores
 
 -   **Hecho para Argentina**: integración local con Mercado Pago y facturación en pesos.
 -   **Mobile-first**: pensado para supervisores en obra que no usan notebook.
@@ -34,7 +67,7 @@ Pensada para constructoras de **10 a 30 personas**, ofrece tableros Kanban, cont
 
 ---
 
-## 💼 Modelo de negocio
+## Modelo de negocio
 
 -   **Free**: 1 proyecto activo / hasta 3 usuarios.
 -   **Plan Pro**: proyectos ilimitados / hasta 30 usuarios.
@@ -42,7 +75,7 @@ Pensada para constructoras de **10 a 30 personas**, ofrece tableros Kanban, cont
 
 ---
 
-## 🛠️ Roadmap
+## Roadmap
 
 -   [ ] MVP: Tableros + usuarios + pagos Mercado Pago.
 -   [ ] Inventario por obra.
