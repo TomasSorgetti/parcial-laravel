@@ -15,13 +15,21 @@ class CustomInput extends Component
     public string $label;
     public bool $required;
     public bool $disabled;
-    public string $error;
+    public ?string $error;
 
     /**
      * Create a new component instance.
      */
-    public function __construct(string $id, string $name, string $type = "text", string $placeholder = "", string $label = "", bool $required = false, bool $disabled = false, $error = "")
-    {
+    public function __construct(
+        string $id,
+        string $name,
+        string $type = "text",
+        string $placeholder = "",
+        string $label = "",
+        bool $required = false,
+        bool $disabled = false,
+        ?string $error = null
+    ) {
         $this->id = $id;
         $this->name = $name;
         $this->type = $type;

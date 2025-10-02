@@ -20,8 +20,8 @@
             </ul>
 
             <div class="mt-6 flex gap-4">
-                <x-ui.main-button to="registrarse" variant="primary">Comenzar Gratis</x-ui.main-button>
-                <x-ui.main-button to="registrarse" variant="secondary">Ver Demo</x-ui.main-button>
+                <x-ui.main-button to="auth.register" variant="primary">Comenzar Gratis</x-ui.main-button>
+                <x-ui.main-button to="home" variant="secondary">Ver Demo</x-ui.main-button>
             </div>
 
             <small class="text-font-secondary mt-6">Mas de 500+ Constructoras ya confian en Constructly</small>

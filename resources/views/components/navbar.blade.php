@@ -18,9 +18,20 @@
         </ul>
 
         <ul class="flex flex-col gap-8 lg:flex-row">
+            @auth
             <li>
-                <x-ui.main-button to="iniciar-session" variant="primary">Iniciar Sessión</x-ui.main-button>
+                <form action="{{ route('auth.logout') }}" method="post">
+                    @csrf
+                    <button type="submit" class="cursor-pointer">
+                        {{ auth()->user()->name }}
+                        Cerrar Sesión</button>
+                </form>
             </li>
+            @else
+            <li>
+                <x-ui.main-button to="auth.login" variant="primary">Iniciar Sessión</x-ui.main-button>
+            </li>
+            @endauth
         </ul>
     </nav>
 </header>

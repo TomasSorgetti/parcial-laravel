@@ -38,6 +38,6 @@
 
         <x-ui.form-button>Registrarse</x-ui.form-button>
 
-        <p class="text-font-secondary w-full text-center">Ya tienes cuenta? <a href="<?= route('registrarse'); ?>" class="text-primary underline">Iniciar Sessión</a></p>
+        <p class="text-font-secondary w-full text-center">Ya tienes cuenta? <a href="<?= route('auth.login'); ?>" class="text-primary underline">Iniciar Sessión</a></p>
     </form>
 </x-layouts.main>

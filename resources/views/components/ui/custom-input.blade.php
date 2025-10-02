@@ -12,11 +12,9 @@
         @if($disabled) disabled @endif
         class="w-full rounded-md border border-border-primary shadow-sm h-12 p-2">
 
-    @if($error)
+    @if(!empty($error))
     <p class="mt-2 text-sm text-red-600">{{ $error }}</p>
-    @else
-    @error($name)
-    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-    @enderror
     @endif
+
+
 </div>

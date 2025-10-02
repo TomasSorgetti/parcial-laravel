@@ -2,7 +2,7 @@
     <x-slot:title>Constructly - Iniciar Sessión</x-slot:title>
     <x-slot:description>Iniciar Sessión</x-slot:description>
 
-    <form action="#" method="post" class="my-32 w-full max-w-[29rem] mx-auto flex flex-col items-start space-y-6">
+    <form action="{{ route('auth.login.login') }}" method="post" class="my-32 w-full max-w-[29rem] mx-auto flex flex-col items-start space-y-6">
         @csrf
         <div class="mb-8">
             <h1 class="font-bold text-font-primary text-3xl">Iniciar Sessión</h1>
@@ -11,6 +11,12 @@
 
         <x-ui.google-button>Continuar con Google</x-ui.google-button>
 
+        @if (session('login.error') || $errors->any())
+        <div class="w-full p-3 mb-4 text-sm text-red-600 bg-red-100 rounded-md">
+            {{ session('login.error') ?? $errors->first() }}
+        </div>
+        @endif
+
         <x-ui.custom-input
             id="email"
             name="email"
@@ -18,7 +24,6 @@
             label="Correo electrónico"
             placeholder="Ingresa tu correo"
             :required="true"
-            :error="$errors->first('email')"
             :disabled=false />
 
         <x-ui.custom-input
@@ -28,7 +33,6 @@
             label="Contraseña"
             placeholder="********"
             :required="true"
-            :error="$errors->first('email')"
             :disabled=false />
 
         <x-ui.custom-check
@@ -38,6 +42,6 @@
 
         <x-ui.form-button>Iniciar Sessión</x-ui.form-button>
 
-        <p class="text-font-secondary w-full text-center">No tienes cuenta? <a href="<?= route('registrarse'); ?>" class="text-primary underline">Registrate</a></p>
+        <p class="text-font-secondary w-full text-center">No tienes cuenta? <a href="<?= route('auth.register'); ?>" class="text-primary underline">Registrate</a></p>
     </form>
 </x-layouts.main>
