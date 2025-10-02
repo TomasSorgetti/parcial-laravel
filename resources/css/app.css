@@ -35,6 +35,8 @@
     --color-error: #ffc3c3;
     --color-error-bis: #e42a2a;
 
+    --color-border-primary: #c8c8c8;
+
     --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
