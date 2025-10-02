@@ -19,7 +19,7 @@
 
         <ul class="flex flex-col gap-8 lg:flex-row">
             <li>
-                <x-ui.main-button to="iniciar-session">Iniciar Sessión</x-ui.main-button>
+                <x-ui.main-button to="iniciar-session" variant="primary">Iniciar Sessión</x-ui.main-button>
             </li>
         </ul>
     </nav>

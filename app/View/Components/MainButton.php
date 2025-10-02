@@ -9,13 +9,15 @@ use Illuminate\View\Component;
 class MainButton extends Component
 {
     public string $to;
+    public string $variant;
 
     /**
      * Create a new component instance.
      */
-    public function __construct(string $to)
+    public function __construct(string $to, string $variant = 'primary')
     {
         $this->to = $to;
+        $this->variant = $variant;
     }
 
     /**
