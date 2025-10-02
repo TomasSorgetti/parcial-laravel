@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
+<x-layouts.main>
+    <x-slot:title>Constructly - Pagina de Inicio</x-slot:title>
+    <x-slot:description>Pagina de Inicio</x-slot:description>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constructly</title>
-</head>
-
-<body>
-    <h1>Hello world</h1>
-</body>
-
-</html>
+    <h1>Pagina de Inicio</h1>
+</x-layouts.main>

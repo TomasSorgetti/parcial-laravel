@@ -6,7 +6,7 @@
 
 Kanban SaaS para constructoras pequeñas y startups de Argentina.
 
-BuildFlow es una aplicación web desarrollada en **Laravel** que ayuda a empresas de la construcción a organizar obras, coordinar equipos y optimizar materiales.  
+Constructly es una aplicación web desarrollada en **Laravel** que ayuda a empresas de la construcción a organizar obras, coordinar equipos y optimizar materiales.  
 Pensada para constructoras de **10 a 30 personas**, ofrece tableros Kanban, control de inventario básico y facturación integrada con **Mercado Pago**, todo desde una interfaz **mobile-friendly** ideal para supervisores en obra.
 
 ---
