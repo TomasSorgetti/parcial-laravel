@@ -5,9 +5,6 @@ use Illuminate\Support\Facades\Route;
 // public routes
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])
     ->name('home');
-Route::get('/blog', [App\Http\Controllers\BlogController::class, 'blog'])
-    ->name('blog')
-    ->middleware('auth');
 
 // auth routes
 Route::get('/iniciar-session', [App\Http\Controllers\AuthController::class, 'showLogin'])
@@ -42,9 +39,42 @@ Route::get('/cuenta/config', function () {
     ->name('settings')
     ->middleware('auth');
 
+
 // admin routes
-Route::get('/admin', function () {
-    return view('admin/dashboard');
-})
-    ->name('admin')
+// Route::get('/admin', function () {
+//     return view('admin/dashboard');
+// })
+//     ->name('admin')
+//     ->middleware('auth');
+
+// BLOG
+Route::get('/blog', [App\Http\Controllers\BlogController::class, 'blogList'])
+    ->name('blog.list');
+
+Route::get('/blog/{id}', [App\Http\Controllers\BlogController::class, 'blogDetail'])
+    ->name('blog.detail');
+
+Route::get('/admin/blog', [App\Http\Controllers\BlogController::class, 'adminBlogList'])
+    // ->name('admin')
+    ->name('admin.blog.list')
+    ->middleware('auth');
+
+Route::get('/admin/blog/add-new', [App\Http\Controllers\BlogController::class, 'adminBlogCreate'])
+    ->name('admin.blog.create')
+    ->middleware('auth');
+
+Route::post('/admin/blog/add-new', [App\Http\Controllers\BlogController::class, 'adminBlogSave'])
+    ->name('admin.blog.save')
+    ->middleware('auth');
+
+Route::get('/admin/blog/edit/{slug}', [App\Http\Controllers\BlogController::class, 'adminBlogEdit'])
+    ->name('admin.blog.edit')
+    ->middleware('auth');
+
+Route::put('/admin/blog/{slug}', [App\Http\Controllers\BlogController::class, 'adminBlogUpdate'])
+    ->name('admin.blog.update')
+    ->middleware('auth');
+
+Route::delete('/admin/blog/{id}', [App\Http\Controllers\BlogController::class, 'adminBlogDelete'])
+    ->name('admin.blog.delete')
     ->middleware('auth');

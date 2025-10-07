@@ -18,7 +18,7 @@
 <body>
     <x-navbar />
 
-    <main>
+    <main class="min-h-[70vh]">
         {{ $slot }}
     </main>
 
