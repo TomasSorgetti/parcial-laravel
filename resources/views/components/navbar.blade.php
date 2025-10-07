@@ -19,14 +19,7 @@
 
         <ul class="flex flex-col gap-8 lg:flex-row">
             @auth
-            <li>
-                <form action="{{ route('auth.logout') }}" method="post">
-                    @csrf
-                    <button type="submit" class="cursor-pointer">
-                        {{ auth()->user()->name }}
-                        Cerrar Sesión</button>
-                </form>
-            </li>
+            <x-ui.auth-dropdown />
             @else
             <li>
                 <x-ui.main-button to="auth.login" variant="primary">Iniciar Sessión</x-ui.main-button>
