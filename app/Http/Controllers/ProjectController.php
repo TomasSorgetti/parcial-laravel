@@ -14,4 +14,10 @@ class ProjectController extends Controller
 
         return view('user.projects', compact('workbench', 'projects'));
     }
+
+    public function projectView($id)
+    {
+        
+        return view('user.project');
+    }
 }

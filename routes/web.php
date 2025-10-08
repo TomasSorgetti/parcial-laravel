@@ -42,6 +42,10 @@ Route::get('/workbenchs/{id}/projects', [App\Http\Controllers\ProjectController:
     ->name('projects.by.workbench')
     ->middleware('auth');
 
+Route::get('/projects/{id}', [App\Http\Controllers\ProjectController::class, 'projectView'])
+    ->name('project')
+    ->middleware('auth');
+
 // admin routes
 // Route::get('/admin', function () {
 //     return view('admin/dashboard');
