@@ -6,5 +6,12 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    //
+    public function projectsByWorkbench($id)
+    {
+        $workbench = \App\Models\Workbench::with('projects')->findOrFail($id);
+
+        $projects = $workbench->projects;
+
+        return view('user.projects', compact('workbench', 'projects'));
+    }
 }

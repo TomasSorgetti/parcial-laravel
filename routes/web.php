@@ -21,9 +21,7 @@ Route::post('/cerrar-sesion', [App\Http\Controllers\AuthController::class, 'logo
 
 // todo => create controllers
 // user routes
-Route::get('/bienvenida', function () {
-    return view('user/welcome');
-})
+Route::get('/bienvenida', [App\Http\Controllers\WorkbenchController::class, 'welcome'])
     ->name('welcome')
     ->middleware('auth');
 
@@ -39,6 +37,10 @@ Route::get('/cuenta/config', function () {
     ->name('settings')
     ->middleware('auth');
 
+// project routes
+Route::get('/workbenchs/{id}/projects', [App\Http\Controllers\ProjectController::class, 'projectsByWorkbench'])
+    ->name('projects.by.workbench')
+    ->middleware('auth');
 
 // admin routes
 // Route::get('/admin', function () {

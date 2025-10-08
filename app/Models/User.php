@@ -58,6 +58,6 @@ class User extends Authenticatable
 
     public function workbenches()
     {
-        return $this->hasMany(Workbench::class);
+        return $this->hasMany(\App\Models\Workbench::class);
     }
 }
