@@ -17,12 +17,21 @@ Route::get('/registrarse', [App\Http\Controllers\AuthController::class, 'showReg
     ->name('auth.register');
 
 Route::post('/cerrar-sesion', [App\Http\Controllers\AuthController::class, 'logout'])
-    ->name('auth.logout');
+    ->name('auth.logout')
+    ->middleware('auth');
 
 // todo => create controllers
 // user routes
 Route::get('/bienvenida', [App\Http\Controllers\WorkbenchController::class, 'welcome'])
     ->name('welcome')
+    ->middleware('auth');
+
+Route::get('/workbenchs/add-new', [App\Http\Controllers\WorkbenchController::class, 'addWorkbenchView'])
+    ->name('workbenches.add-new')
+    ->middleware('auth');
+
+Route::post('/workbenchs/add-new', [App\Http\Controllers\WorkbenchController::class, 'addNewWorkbench'])
+    ->name('workbenches.add-new')
     ->middleware('auth');
 
 Route::get('/cuenta/perfil', function () {
@@ -40,6 +49,14 @@ Route::get('/cuenta/config', function () {
 // project routes
 Route::get('/workbenchs/{id}/projects', [App\Http\Controllers\ProjectController::class, 'projectsByWorkbench'])
     ->name('projects.by.workbench')
+    ->middleware('auth');
+
+Route::get('/projects/add-new', [App\Http\Controllers\ProjectController::class, 'addProjectView'])
+    ->name('projects.add-new')
+    ->middleware('auth');
+
+Route::post('/projects/add-new', [App\Http\Controllers\ProjectController::class, 'createNewProject'])
+    ->name('projects.add-new')
     ->middleware('auth');
 
 Route::get('/projects/{id}', [App\Http\Controllers\ProjectController::class, 'projectView'])

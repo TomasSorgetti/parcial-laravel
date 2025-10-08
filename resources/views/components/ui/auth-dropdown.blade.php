@@ -4,6 +4,7 @@
         {{ auth()->user()->name }}
     </button>
     <ul id="authDropdownMenu" class="absolute top-10 right-0 min-w-40 bg-white text-black rounded p-4 hidden flex-col gap-3 shadow-lg">
+        <li><a href="{{ route('welcome') }}" class="w-full py-1 block">Proyectos</a></li>
         <li><a href="{{ route('admin.blog.list') }}" class="w-full py-1 block">Dashboard</a></li>
         <li><a href="{{ route('profile') }}" class="w-full py-1 block">Perfil</a></li>
         <li>

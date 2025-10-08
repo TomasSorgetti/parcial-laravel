@@ -15,9 +15,30 @@ class WorkbenchController extends Controller
             abort(403, 'No autorizado');
         }
 
-        // Trae los workbenchs con la cantidad de proyectos
         $workbenches = $user->workbenches()->withCount('projects')->get();
 
         return view('user.welcome', compact('workbenches'));
+    }
+
+    public function addWorkbenchView()
+    {
+        return view('user.add-new-workbench');
+    }
+
+    public function addNewWorkbench(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        $workbench = Workbench::create([
+            //? id error, chec types?
+            'user_id' => auth()->id(),
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('welcome')->with('success', 'Workbench creado correctamente.');
     }
 }
