@@ -34,6 +34,14 @@ Route::post('/workbenchs/add-new', [App\Http\Controllers\WorkbenchController::cl
     ->name('workbenches.add-new')
     ->middleware('auth');
 
+Route::get('/workbenchs/edit/{id}', [App\Http\Controllers\WorkbenchController::class, 'editWorkbenchView'])
+    ->name('workbenches.edit')
+    ->middleware('auth');
+
+Route::put('/workbenchs/edit/{id}', [App\Http\Controllers\WorkbenchController::class, 'updateWorkbench'])
+    ->name('workbenches.edit')
+    ->middleware('auth');
+
 Route::get('/cuenta/perfil', function () {
     return view('user/account/profile');
 })

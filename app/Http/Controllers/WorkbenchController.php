@@ -41,4 +41,25 @@ class WorkbenchController extends Controller
 
         return redirect()->route('welcome')->with('success', 'Workbench creado correctamente.');
     }
+
+    public function editWorkbenchView($id)
+    {
+        $workbench = Workbench::findOrFail($id);
+
+        return view('user.edit-workbench', compact('workbench'));
+    }
+
+    public function updateWorkbench(Request $request, $id)
+    {
+        $workbench = Workbench::findOrFail($id);
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        $workbench->update($validated);
+
+        return redirect()->route('welcome')->with('success', 'Workbench actualizado correctamente');
+    }
 }

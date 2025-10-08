@@ -7,7 +7,7 @@
         <h1 class="text-font-primary text-3xl font-bold">Crear un nuevo Proyecto</h1>
 
         <div class="flex flex-col gap-2 ">
-            <label for="name">Nombre:</label>
+            <label class="font-semibold" for="name">Nombre:</label>
             <input
                 type="text"
                 name="name"
@@ -21,7 +21,7 @@
         </div>
 
         <div class="flex flex-col gap-2 ">
-            <label for="address">Dirección:</label>
+            <label class="font-semibold" for="address">Dirección:</label>
             <input
                 type="text"
                 name="address"
@@ -36,7 +36,7 @@
 
         <div class="grid grid-cols-2 gap-4">
             <div class="flex flex-col gap-2">
-                <label for="latitude">Latitud:</label>
+                <label class="font-semibold" for="latitude">Latitud:</label>
                 <input
                     type="number"
                     name="latitude"
@@ -50,7 +50,7 @@
             </div>
 
             <div class="flex flex-col gap-2">
-                <label for="longitude">Longitud:</label>
+                <label class="font-semibold" for="longitude">Longitud:</label>
                 <input
                     type="number"
                     name="longitude"
@@ -67,7 +67,7 @@
 
         <div class="grid grid-cols-2 gap-4">
             <div class="flex flex-col gap-2 ">
-                <label for="start_date">Fecha de inicio:</label>
+                <label for="start_date" class="font-semibold">Fecha de inicio:</label>
                 <input
                     type="date"
                     name="start_date"
@@ -79,7 +79,7 @@
                 @enderror
             </div>
             <div class="flex flex-col gap-2 ">
-                <label for="end_date">Fecha de fin:</label>
+                <label for="end_date" class="font-semibold">Fecha de fin:</label>
                 <input
                     type="date"
                     name="end_date"
@@ -93,7 +93,7 @@
         </div>
 
         <div class="flex flex-col gap-2 mb-6 ">
-            <label for="name">Descripción:</label>
+            <label for="description" class="font-semibold">Descripción:</label>
             <textarea
                 name="description"
                 id="description"
