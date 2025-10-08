@@ -20,9 +20,7 @@
             @foreach ($project->boards as $board)
             <x-ui.board-card :name="$board->name" />
             @endforeach
-            <form action="#" method="post" class="">
-                <button class="bg-gray-100 hover:bg-primary hover:text-font-tertiary active:bg-primary-active min-w-[16rem] min-h-[30rem] text-5xl text-font-secondary w-24 h-24 flex items-center justify-center cursor-pointer">+</button>
-            </form>
+            <a href="#" class="bg-gray-100 hover:bg-primary hover:text-font-tertiary active:bg-primary-active min-w-[16rem] min-h-[30rem] text-5xl text-font-secondary w-24 h-24 flex items-center justify-center cursor-pointer">+</a>
         </div>
     </section>
 </x-layouts.main>

@@ -19,7 +19,7 @@
         @endforeach
     </ul>
 
-    <a href="#"
+    <a href="{{ route('auth.login') }}"
         @class([ 'font-semibold w-full text-center py-3 rounded' , 'text-font-tertiary bg-primary hover:bg-primary-hover active:bg-primary-active'=> $variant === 'secondary',
         'text-font-secondary border border-font-secondary bg-font-secondary/10 hover:shadow-xl' => $variant === 'primary',
         'bg-secondary hover:bg-secondary-hover active:bg-secondary-active text-font-tertiary hover:shadow-xl' => $variant === 'tertiary',

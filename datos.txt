@@ -1,0 +1,9 @@
+Carrera: Diseño y Programación Web
+Materia: Portales y Comercio Electrónico
+Cuatrimestre: 4
+Año: 2025
+Turno: Noche
+Comisión: DWN4AV
+Apellido y nombre: Sorgetti Tomás
+Docente: Santiago Gallino
+Caracter de entrega: 1er parcial

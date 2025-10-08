@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+// todo => Separar las rutas en diferentes archivos
+
 // public routes
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])
     ->name('home');
@@ -13,19 +15,21 @@ Route::get('/docs', function () {
 
 // auth routes
 Route::get('/iniciar-session', [App\Http\Controllers\AuthController::class, 'showLogin'])
-    ->name('auth.login');
+    ->name('auth.login')
+    ->middleware('guest');
 
 Route::post('/iniciar-session', [App\Http\Controllers\AuthController::class, 'login'])
-    ->name('auth.login.login');
+    ->name('auth.login.login')
+    ->middleware('guest');
 
 Route::get('/registrarse', [App\Http\Controllers\AuthController::class, 'showRegister'])
-    ->name('auth.register');
+    ->name('auth.register')
+    ->middleware('guest');
 
 Route::post('/cerrar-sesion', [App\Http\Controllers\AuthController::class, 'logout'])
     ->name('auth.logout')
     ->middleware('auth');
 
-// todo => create controllers
 // user routes
 Route::get('/bienvenida', [App\Http\Controllers\WorkbenchController::class, 'welcome'])
     ->name('welcome')

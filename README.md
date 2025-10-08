@@ -60,8 +60,7 @@ php artisan serve
 ## Diferenciadores
 
 -   **Hecho para Argentina**: integración local con Mercado Pago y facturación en pesos.
--   **Mobile-first**: pensado para supervisores en obra que no usan notebook.
--   **Inventario simple y útil**: sin complejidad de ERP, solo lo esencial.
+-   **Inventario simple y útil**: sin complejidad, solo lo esencial.
 -   **Mapa de obras**: gestión visual geolocalizada de proyectos.
 -   **Gamificación**: progreso con hitos y motivación del equipo.
 
@@ -74,16 +73,3 @@ php artisan serve
 -   **Plan Empresas**: más de 50 usuarios, precio a medida.
 
 ---
-
-## Roadmap
-
--   [ ] MVP: Tableros + usuarios + pagos Mercado Pago.
--   [ ] Inventario por obra.
--   [ ] Integración Google Maps y Calendar.
--   [ ] Notificaciones push.
--   [ ] Reportes financieros y gamificación.
-
-## todo
-
--   add workbench method
--   

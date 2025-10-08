@@ -7,9 +7,12 @@
             <h1 class="text-font-primary text-3xl font-bold">Proyectos de {{ $workbench->name }}</h1>
             <a href="{{ route('workbenches.edit', ['id' => $workbench->id]) }}" class="text-font-tertiary bg-primary hover:bg-primary-hover hover:text-font-tertiary active:bg-primary-active py-3 px-8 rounded font-semibold duration-300">Editar Workbench</a>
         </div>
+        <p class="text-font-secondary mt-4">{{ $workbench->description }}</p>
 
         @if($projects->isEmpty())
-        <p class="text-font-secondary mt-4">No hay proyectos todavía.</p>
+        <div class="mt-16">
+            <x-ui.add-new-card :to="route('projects.add-new')" />
+        </div>
 
         @else
         <div class="flex flex-wrap gap-6 mt-16">
