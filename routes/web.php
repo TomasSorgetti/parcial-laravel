@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])
     ->name('home');
 
+Route::get('/docs', function () {
+    return view('docs');
+})
+    ->name('docs');
+
 // auth routes
 Route::get('/iniciar-session', [App\Http\Controllers\AuthController::class, 'showLogin'])
     ->name('auth.login');
@@ -65,6 +70,14 @@ Route::get('/projects/add-new', [App\Http\Controllers\ProjectController::class, 
 
 Route::post('/projects/add-new', [App\Http\Controllers\ProjectController::class, 'createNewProject'])
     ->name('projects.add-new')
+    ->middleware('auth');
+
+Route::get('/projects/edit/{id}', [App\Http\Controllers\ProjectController::class, 'editProjectView'])
+    ->name('projects.edit')
+    ->middleware('auth');
+
+Route::put('/projects/edit/{id}', [App\Http\Controllers\ProjectController::class, 'updateProject'])
+    ->name('projects.edit')
     ->middleware('auth');
 
 Route::get('/projects/{id}', [App\Http\Controllers\ProjectController::class, 'projectView'])

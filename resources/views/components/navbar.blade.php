@@ -10,10 +10,10 @@
                 <x-ui.nav-link to="home">Inicio</x-ui.nav-link>
             </li>
             <li>
-                <x-ui.nav-link to="home">Docs</x-ui.nav-link>
+                <x-ui.nav-link to="blog.list">Blog</x-ui.nav-link>
             </li>
             <li>
-                <x-ui.nav-link to="blog.list">Blog</x-ui.nav-link>
+                <x-ui.nav-link to="docs">Docs</x-ui.nav-link>
             </li>
         </ul>
 

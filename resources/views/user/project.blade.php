@@ -3,7 +3,11 @@
     <x-slot:description>{{ $project->description }}</x-slot:description>
 
     <section class="my-32 container mx-auto">
-        <h1 class="text-font-primary text-4xl font-bold">{{ $project->name }}</h1>
+        <div class="w-full flex items-center justify-between">
+            <h1 class="text-font-primary text-4xl font-bold">{{ $project->name }}</h1>
+            <a href="{{ route('projects.edit', ['id' => $project->id]) }}" class="text-font-tertiary bg-primary hover:bg-primary-hover hover:text-font-tertiary active:bg-primary-active py-3 px-8 rounded font-semibold duration-300">Modificar proyecto</a>
+        </div>
+
         <p class="text-font-secondary mt-4">{{ $project->description }}</p>
 
         <div class="flex gap-6 py-10">

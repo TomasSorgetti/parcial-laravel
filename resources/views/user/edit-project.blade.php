@@ -1,10 +1,12 @@
 <x-layouts.main>
-    <x-slot:title>Crear un nuevo Proyecto - Constructly</x-slot:title>
-    <x-slot:description>Crear un nuevo Proyecto</x-slot:description>
+    <x-slot:title>Modificar proyecto - Constructly</x-slot:title>
+    <x-slot:description>Modificar proyecto</x-slot:description>
 
-    <form action="{{ route('projects.add-new') }}" method="post" class="my-32 container mx-auto space-y-4 max-w-md text-left">
+    <form action="{{ route('projects.edit', ['id' => $project->id]) }}" method="post" class="my-32 container mx-auto space-y-4 max-w-md text-left">
         @csrf
-        <h1 class="text-font-primary text-3xl font-bold">Crear un nuevo Proyecto</h1>
+        @method('PUT')
+
+        <h1 class="text-font-primary text-3xl font-bold">Modificar proyecto - {{ $project->name }}</h1>
 
         <div class="flex flex-col gap-2 ">
             <label class="font-semibold" for="name">Nombre:</label>
@@ -12,7 +14,7 @@
                 type="text"
                 name="name"
                 id="name"
-                value="{{ old('name') }}"
+                value="{{ old('name', $project->name) }}"
                 placeholder="Mi primer Proyecto"
                 class="w-full rounded-md border border-border-primary shadow-sm h-12 p-2">
             @error('name')
@@ -26,7 +28,7 @@
                 type="text"
                 name="address"
                 id="address"
-                value="{{ old('address') }}"
+                value="{{ old('address', $project->address) }}"
                 placeholder="Mi primer Workbench"
                 class="w-full rounded-md border border-border-primary shadow-sm h-12 p-2">
             @error('address')
@@ -41,7 +43,7 @@
                     type="number"
                     name="latitude"
                     id="latitude"
-                    value="{{ old('latitude') }}"
+                    value="{{ old('latitude', $project->latitude) }}"
                     placeholder="-34.6037"
                     class="w-full rounded-md border border-border-primary shadow-sm h-12 p-2">
                 @error('latitude')
@@ -55,7 +57,7 @@
                     type="number"
                     name="longitude"
                     id="longitude"
-                    value="{{ old('longitude') }}"
+                    value="{{ old('longitude', $project->longitude) }}"
                     placeholder="-58.3816"
                     class="w-full rounded-md border border-border-primary shadow-sm h-12 p-2">
                 @error('longitude')
@@ -72,7 +74,7 @@
                     type="date"
                     name="start_date"
                     id="start_date"
-                    value="{{ old('start_date') }}"
+                    value="{{ old('start_date', $project->start_date) }}"
                     class="w-full rounded-md border border-border-primary shadow-sm h-12 p-2">
                 @error('start_date')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -84,7 +86,7 @@
                     type="date"
                     name="end_date"
                     id="end_date"
-                    value="{{ old('end_date') }}"
+                    value="{{ old('end_date', $project->end_date) }}"
                     class="w-full rounded-md border border-border-primary shadow-sm h-12 p-2">
                 @error('end_date')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -98,11 +100,11 @@
                 name="description"
                 id="description"
                 placeholder="Mi primer Proyecto"
-                class="w-full max-w-md rounded-md border border-border-primary shadow-sm h-24 p-2 resize-none">{{ old('description') }}</textarea>
+                class="w-full max-w-md rounded-md border border-border-primary shadow-sm h-24 p-2 resize-none">{{ old('description', $project->description) }}</textarea>
             @error('description')
             <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
             @enderror
         </div>
-        <x-ui.form-button>Crear Proyecto</x-ui.form-button>
+        <x-ui.form-button>Guardar Proyecto</x-ui.form-button>
     </form>
 </x-layouts.main>
