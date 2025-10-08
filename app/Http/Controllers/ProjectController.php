@@ -9,6 +9,12 @@ use App\Models\Board;
 
 class ProjectController extends Controller
 {
+    /**
+     * Muestra los proyectos asociados a un workbench.
+     *
+     * @param  int  $id ID del workbench
+     * @return \Illuminate\View\View
+     */
     public function projectsByWorkbench($id)
     {
         $workbench = Workbench::with('projects')->findOrFail($id);
@@ -18,6 +24,12 @@ class ProjectController extends Controller
         return view('user.projects', compact('workbench', 'projects'));
     }
 
+    /**
+     * Muestra los detalles de un proyecto.
+     *
+     * @param  int  $id ID del proyecto
+     * @return \Illuminate\View\View
+     */
     public function projectView($id)
     {
         $project = Project::with('boards', 'users')->findOrFail($id);
@@ -27,11 +39,22 @@ class ProjectController extends Controller
         return view('user.project', compact('project', 'integrants_count'));
     }
 
+    /**
+     * Muestra el formulario para crear un proyecto.
+     *
+     * @return \Illuminate\View\View
+     */
     public function addProjectView()
     {
         return view('user.add-new-project');
     }
 
+    /**
+     * Crea un nuevo proyecto.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function createNewProject(Request $request)
     {
         $request->validate([
@@ -78,6 +101,12 @@ class ProjectController extends Controller
             ->with('success', 'Proyecto creado correctamente');
     }
 
+    /**
+     * Muestra el formulario para editar un proyecto.
+     *
+     * @param  int  $id ID del proyecto
+     * @return \Illuminate\View\View
+     */
     public function editProjectView($id)
     {
         $project = Project::findOrFail($id);
@@ -85,6 +114,13 @@ class ProjectController extends Controller
         return view('user.edit-project', compact('project'));
     }
 
+    /**
+     * Actualiza los datos de un proyecto.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id ID del proyecto
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function updateProject(Request $request, $id)
     {
         $request->validate([

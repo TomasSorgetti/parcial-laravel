@@ -8,11 +8,22 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
 
+    /**
+     * Muestra el formulario de login.
+     *
+     * @return \Illuminate\View\View
+     */
     public function showLogin()
     {
         return view('auth.login');
     }
 
+    /**
+     * Procesa el login.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function login(Request $request)
     {
         $request->validate([
@@ -38,13 +49,32 @@ class AuthController extends Controller
             ->with('login.error', 'Credenciales incorrectas.');
     }
 
+    /**
+     * Muestra el register.
+     *
+     * @return \Illuminate\View\View
+     */
     public function showRegister()
     {
         return view('auth.register');
     }
 
-    public function register() {}
+    /**
+     * Procesa el registro.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        // todo
+    }
 
+    /**
+     * Cierra la sesión.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function logout(Request $request)
     {
         Auth::logout();
