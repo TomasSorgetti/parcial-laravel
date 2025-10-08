@@ -1,4 +1,4 @@
-<header class="fixed top-0 left-0 w-full bg-tertiary">
+<header class="fixed z-90 top-0 left-0 w-full bg-tertiary">
     <nav class="container mx-auto flex items-center justify-between p-4 lg:px-0">
         <a
             href="<?= route('home'); ?>">
