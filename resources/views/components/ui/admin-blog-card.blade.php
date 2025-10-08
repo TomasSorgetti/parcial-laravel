@@ -13,7 +13,9 @@
     <div class="grid grid-cols-2 gap-8 mt-4 w-full">
         <a href="{{ route('admin.blog.edit', $slug) }}" class="w-full bg-blue-400 grid-col-span-1 rounded font-bold h-12 flex items-center justify-center text-font-tertiary">Editar</a>
 
-        <form action="#" method="post">
+        <form action="{{ route('admin.blog.delete', $slug) }}" method="post">
+            @csrf
+            @method('DELETE')
             <button type="submit" class="w-full bg-red-400 grid-col-span-1 rounded font-bold h-12 flex items-center justify-center text-font-tertiary">Eliminar</button>
         </form>
     </div>

@@ -51,7 +51,7 @@ Route::get('/cuenta/config', function () {
 Route::get('/blog', [App\Http\Controllers\BlogController::class, 'blogList'])
     ->name('blog.list');
 
-Route::get('/blog/{id}', [App\Http\Controllers\BlogController::class, 'blogDetail'])
+Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'blogDetail'])
     ->name('blog.detail');
 
 Route::get('/admin/blog', [App\Http\Controllers\BlogController::class, 'adminBlogList'])
@@ -75,6 +75,6 @@ Route::put('/admin/blog/{slug}', [App\Http\Controllers\BlogController::class, 'a
     ->name('admin.blog.update')
     ->middleware('auth');
 
-Route::delete('/admin/blog/{id}', [App\Http\Controllers\BlogController::class, 'adminBlogDelete'])
+Route::delete('/admin/blog/{slug}', [App\Http\Controllers\BlogController::class, 'adminBlogDelete'])
     ->name('admin.blog.delete')
     ->middleware('auth');

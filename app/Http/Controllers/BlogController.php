@@ -11,13 +11,22 @@ class BlogController extends Controller
 
     public function blogList()
     {
-        return view('blog');
+        // todo => pagination & filter
+        $articles = Article::latest()->paginate(10);
+
+        return view('blog', compact('articles'));
     }
 
-    public function blogDetail($id) {}
+    public function blogDetail($slug)
+    {
+        $article = Article::where('slug', $slug)->firstOrFail();
+
+        return view('blog-detail', compact('article'));
+    }
 
     public function adminBlogList()
     {
+        // todo => pagination & filter
         $articles = Article::latest()->paginate(10);
 
         return view('admin/dashboard', compact('articles'));
@@ -69,5 +78,12 @@ class BlogController extends Controller
         return redirect()->route('admin.blog.list')->with('success', 'Artículo actualizado correctamente.');
     }
 
-    public function adminBlogDelete($id) {}
+    public function adminBlogDelete($slug)
+    {
+        $article = Article::where('slug', $slug)->firstOrFail();
+
+        $article->delete();
+
+        return redirect()->route('admin.blog.list')->with('success', 'Artículo eliminado correctamente.');
+    }
 }
