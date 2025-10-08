@@ -17,4 +17,9 @@ class Project extends Model
     {
         return $this->belongsToMany(User::class)->withPivot('role')->withTimestamps();
     }
+
+    public function workbench()
+    {
+        return $this->belongsTo(Workbench::class);
+    }
 }

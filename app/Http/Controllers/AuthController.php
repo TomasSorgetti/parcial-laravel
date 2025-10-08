@@ -29,7 +29,7 @@ class AuthController extends Controller
         $credentiasls = $request->only('email', 'password');
 
         if (Auth::attempt($credentiasls)) {
-            return to_route('home')
+            return to_route('welcome')
                 ->with('success', 'Logueado con éxito');
         }
 
