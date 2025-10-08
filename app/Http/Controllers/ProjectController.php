@@ -17,7 +17,10 @@ class ProjectController extends Controller
 
     public function projectView($id)
     {
-        
-        return view('user.project');
+        $project = \App\Models\Project::with('boards', 'users')->findOrFail($id);
+
+        $integrants_count = $project->users()->count();
+
+        return view('user.project', compact('project', 'integrants_count'));
     }
 }
