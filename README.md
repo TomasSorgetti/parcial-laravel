@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/status-MVP--planning-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Kanban SaaS para constructoras pequeñas y startups de Argentina.
+Kanban para constructoras pequeñas y startups de Argentina.
 
 Constructly es una aplicación web desarrollada en **Laravel** que ayuda a empresas de la construcción a organizar obras, coordinar equipos y optimizar materiales.  
 Pensada para constructoras de **10 a 30 personas**, ofrece tableros Kanban, control de inventario básico y facturación integrada con **Mercado Pago**, todo desde una interfaz **mobile-friendly** ideal para supervisores en obra.

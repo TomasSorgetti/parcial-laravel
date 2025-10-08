@@ -45,4 +45,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
+    }
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class)->withPivot('role')->withTimestamps();
+    }
 }
